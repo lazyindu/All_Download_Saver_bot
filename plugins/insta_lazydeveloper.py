@@ -139,7 +139,7 @@ async def download_from_lazy_instagram(client, message, url, platform):
         await asyncio.sleep(1)
         await lazydeveloperr.edit(f"Trying with advance method...")
         try:
-            lazybhaiya = asyncio.create_task(download_from_lazy_tiktok_and_x(client, message, url))
+            lazybhaiya = asyncio.create_task(download_from_lazy_tiktok_and_x(client, message, url, platform))
             print(f"method changed for user {message.from_user.id} => url = {url}")
             await lazybhaiya
             await respond.delete()
