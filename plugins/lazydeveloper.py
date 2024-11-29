@@ -23,7 +23,6 @@ user_tasks = {}
 # user_message_count = {}
 user_message_count = defaultdict(list)
 
-
 LAZY_REGEX = re.compile(
     pattern=r'(https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&//=]*))(.*)?')
 
@@ -120,7 +119,7 @@ async def lazydeveloper_handle_url(client, message, url, user_id):
         await client.send_chat_action(message.chat.id, enums.ChatAction.TYPING)
         await ok.edit("😞 oᴏps! lᴏᴏks lɪᴋᴇ wᴇ'ʀᴇ nᴏᴛ frɪᴇnds wɪᴛʜ ᴛʜᴀᴛ lɪɴᴋ yᴇᴛ. 🌐\n💔 bᴜᴛ dᴏɴ'ᴛ wᴏʀʀʏ, wᴇ'ʀᴇ wᴏʀᴋɪɴɢ hᴀʀᴅ ᴛᴏ bʀɪɴɢ ɪᴛ ᴛᴏ ᴛʜᴇ pᴀʀᴛʏ! 🎉 \n\nsᴛᴀʏ ᴛᴜɴᴇᴅ! 👀")
         await client.send_message(LOG_CHANNEL,
-                                f"<b>🚨 ᴜɴᴋɴᴏᴡɴ ᴘʟᴀᴛꜰᴏʀᴍ ʟɪɴᴋ sᴇɴᴛ!</b>\n\n<b>ᴛʜᴇ ᴜsᴇʀ ᴇɴᴛᴇʀᴇᴅ ᴀ ʟɪɴᴋ ғʀᴏᴍ ᴀ ᴘʟᴀᴛꜰᴏʀᴍ ᴡᴇ ᴅᴏɴ'ᴛ ʀᴇᴄᴏɢɴɪᴢᴇ. ᴘʟᴇᴀsᴇ ᴄʜᴇᴄᴋ ᴛʜᴇ ʟɪɴᴋ ᴏʀ ᴜᴘᴅᴀᴛᴇ ᴏᴜʀ ᴘʟᴀᴛꜰᴏʀᴍ ʜᴀɴᴅʟᴇʀ.</b>\n\n⚡hᴇʀᴇ ɪs ᴛʜᴇ ʟɪɴᴋ::\n{url}\n\n👫ᴜsᴇʀ::{message.from_user.mention}\n\n<blockquote>🦋 with love {client.user.mention} 🍟</blockquote>",
+                                f"<b>🚨 ᴜɴᴋɴᴏᴡɴ ᴘʟᴀᴛꜰᴏʀᴍ ʟɪɴᴋ sᴇɴᴛ!</b>\n\n<b>ᴛʜᴇ ᴜsᴇʀ ᴇɴᴛᴇʀᴇᴅ ᴀ ʟɪɴᴋ ғʀᴏᴍ ᴀ ᴘʟᴀᴛꜰᴏʀᴍ ᴡᴇ ᴅᴏɴ'ᴛ ʀᴇᴄᴏɢɴɪᴢᴇ. ᴘʟᴇᴀsᴇ ᴄʜᴇᴄᴋ ᴛʜᴇ ʟɪɴᴋ ᴏʀ ᴜᴘᴅᴀᴛᴇ ᴏᴜʀ ᴘʟᴀᴛꜰᴏʀᴍ ʜᴀɴᴅʟᴇʀ.</b>\n\n⚡hᴇʀᴇ ɪs ᴛʜᴇ ʟɪɴᴋ::\n{url}\n\n👫ᴜsᴇʀ::{message.from_user.mention}\n\n<blockquote>🦋 with love {client.mention} 🍟</blockquote>",
                                 disable_web_page_preview = True, 
                                 parse_mode=enums.ParseMode.HTML)
     except Exception as e:

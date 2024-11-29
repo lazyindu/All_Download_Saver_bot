@@ -150,8 +150,8 @@ async def cb_handler(client, query: CallbackQuery):
             text=Script.WELCOME_TEXT.format(query.from_user.mention),
             reply_markup=InlineKeyboardMarkup([
                 [
-                InlineKeyboardButton('• ᴜᴘᴅᴀᴛᴇꜱ •', url='https://t.me/lazydeveloper'),
-                InlineKeyboardButton('• ꜱᴜᴘᴘᴏʀᴛ •', url='https://t.me/lazydeveloper')
+                InlineKeyboardButton('• ᴜᴘᴅᴀᴛᴇꜱ •', url='https://telegram.me/Simplifytuber'),
+                InlineKeyboardButton('• ꜱᴜᴘᴘᴏʀᴛ •', url='https://telegram.me/Simplifytuber')
                 ],[
                 InlineKeyboardButton("👑 • ᴏᴡɴᴇʀ • 💎", callback_data='own')
                 ],[
