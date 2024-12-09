@@ -21,7 +21,7 @@ async def callback_query_ytdl_audio(_, callback_query):
     try:
         # url = callback_query.message.reply_to_message.text
         callback_data = callback_query.data
-        _, url = callback_data.split("|", maxsplit=1) 
+        _, url = callback_data.split(":") 
 
         ydl_opts = {
             "cookies": "./cookies.txt",
@@ -110,8 +110,8 @@ async def callback_query_ytdl_video(_, callback_query):
         # url = callback_query.message.text
         # url = callback_query.message.reply_to_message.text
         callback_data = callback_query.data
-        _, url = callback_data.split("|", maxsplit=1) 
-        print(f"callback url => {url}")
+        # _, url = callback_data.split(":", maxsplit=1) 
+        # print(f"callback url => {url}")
         message = callback_query.message
         command_parts = message.text.split(maxsplit=1)
 
