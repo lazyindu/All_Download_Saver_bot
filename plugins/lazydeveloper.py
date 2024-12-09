@@ -168,7 +168,7 @@ async def handle_seperate_download(client: Client, message: Message):
     ok = await message.reply("🔄 Detecting URL type and processing the download...")
     
     # Call your download function
-    await youtube_and_other_download_lazy(client, message, url)
+    await youtube_and_other_download_lazy(client, message, url, ok)
     await ok.edit_text("Thank you for using me ❤")
 
 @Client.on_message(filters.private & filters.forwarded)
