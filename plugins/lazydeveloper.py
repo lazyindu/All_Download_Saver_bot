@@ -8,7 +8,7 @@ import asyncio
 from plugins.insta_lazydeveloper import download_from_lazy_instagram 
 from plugins.tiktok_x_lazydeveloper import download_from_lazy_tiktok_and_x
 from plugins.pintrest_lazydeveloepr import download_pintrest_vid
-from plugins.youtube_downloader_lazydeveloper import youtube_and_other_download_lazy
+from plugins.youtube_downloader_lazydeveloper import youtube_and_other_download_lazy, youtube_download_lazy
 from pyrogram import Client, filters
 from pyrogram.types import Message
 import re
@@ -102,7 +102,7 @@ async def lazydeveloper_handle_url(client, message, url, user_id):
             "pinterest.com": download_from_lazy_tiktok_and_x,
             "facebook.com": download_from_lazy_tiktok_and_x,
             # "youtube.com": download_from_youtube,
-            # "youtu.be": download_from_youtube
+            "youtu.be": youtube_download_lazy
         }
 
         for platform, handler in PLATFORM_HANDLERS.items():
