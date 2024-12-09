@@ -26,8 +26,8 @@ async def youtube_and_other_download_lazy(bot, update, url, ok):
     file_name = None
 
     if "youtu.be" in url:
-        callback_audio_data = f"ytdl_audio|{url}"
-        callback_video_data = f"ytdl_video|{url}"
+        callback_audio_data = f"ytdl_audio:{url}"
+        callback_video_data = f"ytdl_video"
         return await update.reply_text(
             "**Choose Download type**",
             reply_markup=InlineKeyboardMarkup(
