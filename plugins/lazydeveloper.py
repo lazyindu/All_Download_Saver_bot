@@ -163,7 +163,7 @@ async def handle_seperate_download(client: Client, message: Message):
     if not url_pattern.match(url):
         await message.reply("⚠️ The provided text is not a valid URL. Please check and try again.")
         return
-
+    print(f"url {url}")
     # Inform the user about the process
     ok = await message.reply("🔄 Detecting URL type and processing the download...")
     
