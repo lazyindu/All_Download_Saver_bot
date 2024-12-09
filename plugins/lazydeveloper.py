@@ -26,7 +26,7 @@ user_message_count = defaultdict(list)
 LAZY_REGEX = re.compile(
     pattern=r'(https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&//=]*))(.*)?')
 
-@Client.on_message(filters.private & filters.text & ~filters.forwarded & ~filters.command(['start','users','broadcast']))
+@Client.on_message(filters.private & filters.text & ~filters.forwarded & ~filters.command(['start','users','broadcast','spdl']))
 async def handle_incoming_message(client: Client, message: Message):
     try:
         await client.send_chat_action(message.chat.id, enums.ChatAction.TYPING)
