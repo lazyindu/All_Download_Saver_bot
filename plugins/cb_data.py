@@ -19,10 +19,9 @@ from script import Script
 @Client.on_callback_query(filters.regex("^ytdl_audio$"))
 async def callback_query_ytdl_audio(_, callback_query):
     try:
-        # url = callback_query.message.reply_to_message.text
-        callback_data = callback_query.data
-        _, url = callback_data.split(":") 
-
+        url = callback_query.message.reply_to_message.text
+        # callback_data = callback_query.data
+        print(url)
         ydl_opts = {
             "cookies": "./cookies.txt",
             "format": "bestaudio",
@@ -107,20 +106,20 @@ async def send_video(message: Message, info_dict, video_file):
 @Client.on_callback_query(filters.regex("^ytdl_video$"))
 async def callback_query_ytdl_video(_, callback_query):
     try:
-        # url = callback_query.message.text
+        url = callback_query.message.reply_to_message.text
         # url = callback_query.message.reply_to_message.text
-        callback_data = callback_query.data
+        # callback_data = callback_query.data
         # _, url = callback_data.split(":", maxsplit=1) 
         # print(f"callback url => {url}")
         message = callback_query.message
-        command_parts = message.text.split(maxsplit=1)
+        # command_parts = message.text.split(maxsplit=1)
 
           # Split the message into command and arguments
-        if len(command_parts) < 2:
-            await message.reply("⚠️ Please provide a valid URL after the command. Example: `/spdl <url>`")
-            return
+        # if len(command_parts) < 2:
+        #     await message.reply("⚠️ Please provide a valid URL after the command. Example: `/spdl <url>`")
+        #     return
         
-        url = command_parts[1].strip()
+        # url = command_parts[1].strip()
         print(f"new url => {url}")
         ydl_opts = {
             "cookies": "./cookies.txt",
